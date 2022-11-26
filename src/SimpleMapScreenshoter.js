@@ -134,7 +134,7 @@ export const SimpleMapScreenshoter = L.Control.extend({
      * @private
      */
     _canvasToImage (canvas, {mimeType}) {
-        const image = canvas.toDataURL(mimeType)
+        const image = canvas.toDataURL(mimeType, 1)
         if (image.indexOf('base64') === -1) {
             return Promise.reject(new Error('Base64 image generation error'))
         }
